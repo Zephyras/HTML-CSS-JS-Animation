@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*체크박스*/
+        
+        .check input {
+            display: none;
+        }
+        
+        .check .icon {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;
+            border: 10px solid #000;
+            border-radius: 5px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .check .icon::after,
+        .check .icon::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 0;
+            background-color: #ff1100;
+            position: absolute;
+            transform-origin: left top;
+            border-radius: 5px;
+        }
+        
+        .check .icon::before {
+            top: 50px;
+            left: 12px;
+            transform: rotate(-45deg);
+        }
+        
+        .check .icon::after {
+            top: 85px;
+            left: 48px;
+            transform: rotate(-135deg);
+        }
+        
+        .check input:checked~.icon {
+            border-color: #ff1100;
+        }
+        
+        .check input:checked~.icon::before {
+            height: 50px;
+            transition: all 0.35s ease;
+        }
+        
+        .check input:checked~.icon::after {
+            height: 120px;
+            transition: all 0.35s ease 0.35s;
+        }
+    </style>
+    <style>
+        /* 종료버튼 */
+        
+        input[id="menuicon"] {
+            display: none;
+        }
+        
+        input[id="menuicon"]+label {
+            display: block;
+            width: 60px;
+            height: 40px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        input[id="menuicon"]+label span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            border-radius: 30px;
+            background: #000;
+            transition: all 0.35s;
+        }
+        
+        input[id="menuicon"]+label span:nth-child(1) {
+            top: 0;
+        }
+        
+        input[id="menuicon"]+label span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        input[id="menuicon"]+label span:nth-child(3) {
+            bottom: 0;
+        }
+        
+        input[id="menuicon"]:checked+label span:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        
+        input[id="menuicon"]:checked+label span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        input[id="menuicon"]:checked+label span:nth-child(3) {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+    </style>
+    <style>
+        [id="border"] {
+            border: #ff1100;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <a>Zephyras</a>
+    <div style="border: 2px solid black" id="border">
+        코딩한하는남자 코남 CCS 따라하기
+    </div>
+    <ul>
+        <!--체크박스-->
+        <li>1.약관동의 체크아이콘</li>
+        <label class="check">
+                <input type="checkbox">
+                <span class="icon"></span>
+            </label>
+        <p></p>
+        <li>2.약관동의 메튜버튼 애니메이션</li>
+        <!--종료버튼-->
+        <input type="checkbox" id="menuicon">
+        <label for="menuicon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+    </ul>
+
+</body>
+
+</html>
