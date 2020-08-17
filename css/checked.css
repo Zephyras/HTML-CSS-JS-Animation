@@ -1,11 +1,11 @@
 /*체크박스*/
 
 @charset "utf-8";
-#checkanim .check input {
+.check input {
     display: none;
 }
 
-#checkanim .check .icon {
+.check .icon {
     display: inline-block;
     width: 100px;
     height: 100px;
@@ -16,8 +16,8 @@
     cursor: pointer;
 }
 
-#checkanim .check .icon::after,
-#checkanim .check .icon::before {
+.check .icon::after,
+.check .icon::before {
     content: '';
     display: inline-block;
     width: 20px;
@@ -28,13 +28,13 @@
     border-radius: 5px;
 }
 
-#checkanim .check .icon::before {
+.check .icon::before {
     top: 50px;
     left: 12px;
     transform: rotate(-45deg);
 }
 
-#checkanim .check .icon::after {
+.check .icon::after {
     top: 85px;
     left: 48px;
     transform: rotate(-135deg);
